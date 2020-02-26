@@ -86,7 +86,7 @@ void HexOctBin::toHex(uint32_t dec, String &rslt) {
 uint32_t HexOctBin::Bin2Dec(String Bin) {
   uint64_t multiply = 1, tmp;
   uint32_t rslt = 0;
-  Bin = "." + Bin;  // trick
+  Bin = "." + Bin;
   for (int i = Bin.length() - 1; i; i--) {
     tmp = 0;
     if (Bin[i] >= '0' && Bin[i] <= '1') {
@@ -102,7 +102,7 @@ uint32_t HexOctBin::Bin2Dec(String Bin) {
 uint32_t HexOctBin::Oct2Dec(String Oct) {
   uint64_t multiply = 1, tmp;
   uint32_t rslt = 0;
-  Oct = "." + Oct;  // trick
+  Oct = "." + Oct; 
   for (int i = Oct.length() - 1; i; i--) {
     tmp = 0;
     if (Oct[i] >= '0' && Oct[i] <= '7') {
@@ -118,7 +118,7 @@ uint32_t HexOctBin::Oct2Dec(String Oct) {
 uint32_t HexOctBin::Hex2Dec(String Hex) {
   uint64_t multiply = 1, tmp;
   uint32_t rslt = 0;
-  Hex = "." + Hex;  // trick
+  Hex = "." + Hex; 
   Hex.toUpperCase();
   for (int i = Hex.length() - 1; i; i--) {
     tmp = 0;
