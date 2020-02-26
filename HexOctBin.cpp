@@ -27,6 +27,7 @@ void HexOctBin::toHOB(uint32_t dec, String &rslt, byte tp = 3) {
   rslt = s;
 }
 
+// protected function
 // leading zeros if necessary
 void HexOctBin::to2(String &s) {
   byte zero = s.length() % 8;
