@@ -31,14 +31,14 @@ void HexOctBin::to2(String &s) {
   byte zero = s.length() % 8;
   if (zero != 0)
     for (int i = zero; i < 8; i++) s = "0" + s;
-  if (s != "") s = "0B" + s;
+  if (s != "") s = "B" + s;
 }
 
 void HexOctBin::to8(String &s) {
   byte zero = s.length() % 3;
   if (zero != 0)
     for (int i = zero; i < 3; i++) s = "0" + s;
-  if (s != "") s = "0o" + s;
+  if (s != "") s = "O" + s;
 }
 
 void HexOctBin::to16(String &s) {
