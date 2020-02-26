@@ -121,7 +121,7 @@ uint32_t HexOctBin::Hex2Dec(String Hex) {
     if (Hex[i] >= '0' && Hex[i] <= '9') {
       tmp = ( (int) Hex[i] - 48 ) * multiply; multiply <<= 4; // multiply *= 16;
     } else if (Hex[i] >= 'A' && Hex[i] <= 'F') {
-      tmp = ( ( (int) Hex[i] - 65 ) + 10 ) * multiply; multiply <<= 4; // multiply *= 16;
+      tmp = ( (int) Hex[i] - 55 ) * multiply; multiply <<= 4; // multiply *= 16;
     }
     rslt += tmp;
   }
