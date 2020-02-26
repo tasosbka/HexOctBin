@@ -4,7 +4,7 @@
   Released into the public domain.
 */
 
-// #include <HexOctBin.h>
+#include <HexOctBin.h>
 
 HexOctBin hob;
 
