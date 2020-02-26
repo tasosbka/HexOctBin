@@ -6,6 +6,7 @@
 
 #include "HexOctBin.h"
 
+// public functions 
 // convert Hex/Oct/Bin to decimal
 // tp 1 = Bin, 2 = Oct, 3 = Hex (default)
 uint32_t HexOctBin::toDec(String HOB, byte tp = 3) {
@@ -53,7 +54,7 @@ void HexOctBin::toBin(uint32_t dec, String &rslt) {
   rslt = "";
   while (dec > 0) {
     rslt = String(dec & 0x01) + rslt;
-    dec >>= 1;  // dec /= 2;
+    dec >>= 1; 
   }
   to2(rslt);
 }
@@ -64,7 +65,7 @@ void HexOctBin::toOct(uint32_t dec, String &rslt) {
   char Digit[] = "01234567" ;
   while (dec > 0) {
     rslt = Digit[dec & 0x07] + rslt;
-    dec >>= 3;  // dec /= 8;
+    dec >>= 3; 
   }
   to8(rslt);
 }
@@ -75,7 +76,7 @@ void HexOctBin::toHex(uint32_t dec, String &rslt) {
   rslt = "";
   while (dec > 0) {
     rslt = Digit[dec & 0x0F]  + rslt;
-    dec >>= 4;  // dec /= 16;
+    dec >>= 4; 
   }
   to16(rslt);
 }
@@ -88,7 +89,8 @@ uint32_t HexOctBin::Bin2Dec(String Bin) {
   for (int i = Bin.length() - 1; i; i--) {
     tmp = 0;
     if (Bin[i] >= '0' && Bin[i] <= '1') {
-      tmp = ( (int) Bin[i] - 48 ) * multiply; multiply <<= 1; // multiply *= 2;
+      tmp = ( (int) Bin[i] - 48 ) * multiply; 
+      multiply <<= 1; 
     }
     rslt += tmp;
   }
@@ -103,7 +105,8 @@ uint32_t HexOctBin::Oct2Dec(String Oct) {
   for (int i = Oct.length() - 1; i; i--) {
     tmp = 0;
     if (Oct[i] >= '0' && Oct[i] <= '7') {
-      tmp = ( (int) Oct[i] - 48 ) * multiply; multiply <<= 3; // multiply *= 8;
+      tmp = ( (int) Oct[i] - 48 ) * multiply; 
+      multiply <<= 3;
     }
     rslt += tmp;
   }
@@ -119,9 +122,11 @@ uint32_t HexOctBin::Hex2Dec(String Hex) {
   for (int i = Hex.length() - 1; i; i--) {
     tmp = 0;
     if (Hex[i] >= '0' && Hex[i] <= '9') {
-      tmp = ( (int) Hex[i] - 48 ) * multiply; multiply <<= 4; // multiply *= 16;
+      tmp = ( (int) Hex[i] - 48 ) * multiply; 
+      multiply <<= 4;
     } else if (Hex[i] >= 'A' && Hex[i] <= 'F') {
-      tmp = ( (int) Hex[i] - 55 ) * multiply; multiply <<= 4; // multiply *= 16;
+      tmp = ( (int) Hex[i] - 55 ) * multiply; 
+      multiply <<= 4;
     }
     rslt += tmp;
   }
