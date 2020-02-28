@@ -30,37 +30,37 @@ void HexOctBin::toHOB(uint32_t dec, String &rslt, byte tp = 3) {
 // convert Bin to Oct
 void HexOctBin::Bin2Oct(String Bin, String &rslt) {
   double dec = Bin2Dec(Bin);
-  toHOB(dec, rslt, 2);
+  toOct(dec, rslt);
 }
 
 // convert Bin to Hex
 void HexOctBin::Bin2Hex(String Bin, String &rslt) {
   double dec = Bin2Dec(Bin);
-  toHOB(dec, rslt);
+  toHex(dec, rslt);
 }
 
 // convert Oct to Bin
 void HexOctBin::Oct2Bin(String Oct, String &rslt) {
   double dec = Oct2Dec(Oct);
-  toHOB(dec, rslt, 1);
+  toBin(dec, rslt);
 }
 
 // convert Oct to Hex
 void HexOctBin::Oct2Hex(String Oct, String &rslt) {
   double dec = Oct2Dec(Oct);
-  toHOB(dec, rslt);
+  toHex(dec, rslt);
 }
 
 // convert Hex to Bin
 void HexOctBin::Hex2Bin(String Hex, String &rslt) {
   double dec = Hex2Dec(Hex);
-  toHOB(dec, rslt, 1);
+  toBin(dec, rslt);
 }
 
 // convert Hex to Oct
 void HexOctBin::Hex2Oct(String Hex, String &rslt) {
   double dec = Hex2Dec(Hex);
-  toHOB(dec, rslt, 2);
+  toOct(dec, rslt);
 }
 
 // protected function
