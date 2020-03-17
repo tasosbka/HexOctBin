@@ -69,7 +69,7 @@ void HexOctBin::to2(String &s) {
   byte zero = s.length() % 8;
   if (zero != 0)
     for (int i = zero; i < 8; i++) s = "0" + s;
-  if (s != "") s = "B" + s;
+  s = "B" + s;
 }
 
 void HexOctBin::to8(String &s) {
@@ -93,6 +93,7 @@ void HexOctBin::toBin(uint32_t dec, String &rslt) {
     rslt = String(dec & 0x01) + rslt;
     dec >>= 1;
   }
+  if (rslt == "") rslt = "0";
   to2(rslt);
 }
 
